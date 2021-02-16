@@ -1,0 +1,367 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{D3428F1A-65D9-4BB7-826F-0A2A79AA2E47}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SV</RootNamespace>
+    <AssemblyName>AndroSpy</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>favicon.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
+      <HintPath>..\packages\MetroModernUI.1.4.0.0\lib\net\MetroFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="MetroFramework.Design, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
+      <HintPath>..\packages\MetroModernUI.1.4.0.0\lib\net\MetroFramework.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="MetroFramework.Fonts, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
+      <HintPath>..\packages\MetroModernUI.1.4.0.0\lib\net\MetroFramework.Fonts.dll</HintPath>
+    </Reference>
+    <Reference Include="NAudio, Version=1.10.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\NAudio.1.10.0\lib\net35\NAudio.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Ayarlar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ayarlar.Designer.cs">
+      <DependentUpon>Ayarlar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Baglanti.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Baglanti.Designer.cs">
+      <DependentUpon>Baglanti.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Bilgiler.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Bilgiler.Designer.cs">
+      <DependentUpon>Bilgiler.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Bildiri.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Bildiri.Designer.cs">
+      <DependentUpon>Bildiri.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Builder.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Builder.Designer.cs">
+      <DependentUpon>Builder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CagriKayitlari.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CagriKayitlari.Designer.cs">
+      <DependentUpon>CagriKayitlari.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DownloadManager.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DownloadManager.Designer.cs">
+      <DependentUpon>DownloadManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Eglence.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Eglence.Designer.cs">
+      <DependentUpon>Eglence.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ekle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ekle.Designer.cs">
+      <DependentUpon>Ekle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FİleManager.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FİleManager.Designer.cs">
+      <DependentUpon>FİleManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Goruntule.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Goruntule.Designer.cs">
+      <DependentUpon>Goruntule.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Hakkinda.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Hakkinda.Designer.cs">
+      <DependentUpon>Hakkinda.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Keylogger.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Keylogger.Designer.cs">
+      <DependentUpon>Keylogger.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Konum.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Konum.Designer.cs">
+      <DependentUpon>Konum.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Kurbanlar.cs" />
+    <Compile Include="Kamera.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Kamera.Designer.cs">
+      <DependentUpon>Kamera.cs</DependentUpon>
+    </Compile>
+    <Compile Include="livescreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="livescreen.Designer.cs">
+      <DependentUpon>livescreen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Mikrofon.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Mikrofon.Designer.cs">
+      <DependentUpon>Mikrofon.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Port.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Port.Designer.cs">
+      <DependentUpon>Port.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Rehber.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Rehber.Designer.cs">
+      <DependentUpon>Rehber.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Settings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Settings.Designer.cs">
+      <DependentUpon>Settings.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SMS.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SMS.Designer.cs">
+      <DependentUpon>SMS.cs</DependentUpon>
+    </Compile>
+    <Compile Include="smsgeldi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="smsgeldi.Designer.cs">
+      <DependentUpon>smsgeldi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SMSYoneticisi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SMSYoneticisi.Designer.cs">
+      <DependentUpon>SMSYoneticisi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="StringCompressor.cs" />
+    <Compile Include="Telefon.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Telefon.Designer.cs">
+      <DependentUpon>Telefon.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UploadProgress.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UploadProgress.Designer.cs">
+      <DependentUpon>UploadProgress.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Uygulamalar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Uygulamalar.Designer.cs">
+      <DependentUpon>Uygulamalar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="YeniArama.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="YeniArama.Designer.cs">
+      <DependentUpon>YeniArama.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Yuzde.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Yuzde.Designer.cs">
+      <DependentUpon>Yuzde.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Ayarlar.resx">
+      <DependentUpon>Ayarlar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Baglanti.resx">
+      <DependentUpon>Baglanti.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Bilgiler.resx">
+      <DependentUpon>Bilgiler.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Bildiri.resx">
+      <DependentUpon>Bildiri.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Builder.resx">
+      <DependentUpon>Builder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CagriKayitlari.resx">
+      <DependentUpon>CagriKayitlari.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DownloadManager.resx">
+      <DependentUpon>DownloadManager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Eglence.resx">
+      <DependentUpon>Eglence.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ekle.resx">
+      <DependentUpon>Ekle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FİleManager.resx">
+      <DependentUpon>FİleManager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Goruntule.resx">
+      <DependentUpon>Goruntule.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Hakkinda.resx">
+      <DependentUpon>Hakkinda.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Keylogger.resx">
+      <DependentUpon>Keylogger.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Kamera.resx">
+      <DependentUpon>Kamera.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Konum.resx">
+      <DependentUpon>Konum.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="livescreen.resx">
+      <DependentUpon>livescreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mikrofon.resx">
+      <DependentUpon>Mikrofon.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Port.resx">
+      <DependentUpon>Port.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="Rehber.resx">
+      <DependentUpon>Rehber.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Settings.resx">
+      <DependentUpon>Settings.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SMS.resx">
+      <DependentUpon>SMS.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="smsgeldi.resx">
+      <DependentUpon>smsgeldi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SMSYoneticisi.resx">
+      <DependentUpon>SMSYoneticisi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Telefon.resx">
+      <DependentUpon>Telefon.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UploadProgress.resx">
+      <DependentUpon>UploadProgress.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Uygulamalar.resx">
+      <DependentUpon>Uygulamalar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="YeniArama.resx">
+      <DependentUpon>YeniArama.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Yuzde.resx">
+      <DependentUpon>Yuzde.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="android_logo_9e4539a7de_seeklogo_com_mly_icon.ico" />
+    <Content Include="favicon.ico" />
+    <Content Include="MetroFramework.txt" />
+    <None Include="bin\Debug\resources\File Manager\nothing.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

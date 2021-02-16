@@ -1,0 +1,55 @@
+c:\users\harun\documents\visual studio 2012\Projects\SV\SV\bin\Debug\SV.exe.config
+c:\users\harun\documents\visual studio 2012\Projects\SV\SV\bin\Debug\SV.exe
+c:\users\harun\documents\visual studio 2012\Projects\SV\SV\bin\Debug\SV.pdb
+c:\users\harun\documents\visual studio 2012\Projects\SV\SV\obj\Debug\SV.csprojResolveAssemblyReference.cache
+c:\users\harun\documents\visual studio 2012\Projects\SV\SV\obj\Debug\SV.Form1.resources
+c:\users\harun\documents\visual studio 2012\Projects\SV\SV\obj\Debug\SV.Properties.Resources.resources
+c:\users\harun\documents\visual studio 2012\Projects\SV\SV\obj\Debug\SV.csproj.GenerateResource.Cache
+c:\users\harun\documents\visual studio 2012\Projects\SV\SV\obj\Debug\SV.exe
+c:\users\harun\documents\visual studio 2012\Projects\SV\SV\obj\Debug\SV.pdb
+C:\Users\Harun\documents\visual studio 2012\Projects\SV\SV\obj\Debug\SV.Mesaj.resources
+C:\Users\Harun\Documents\Visual Studio 2012\Projects\SV\SV\obj\Debug\SV.MasaustuIzleme.resources
+C:\Users\Harun\source\repos\SV\SV\bin\Debug\AndroSpy.exe.config
+C:\Users\Harun\source\repos\SV\SV\bin\Debug\AndroSpy.exe
+C:\Users\Harun\source\repos\SV\SV\bin\Debug\AndroSpy.pdb
+C:\Users\Harun\source\repos\SV\SV\bin\Debug\MetroFramework.Design.dll
+C:\Users\Harun\source\repos\SV\SV\bin\Debug\MetroFramework.dll
+C:\Users\Harun\source\repos\SV\SV\bin\Debug\MetroFramework.Fonts.dll
+C:\Users\Harun\source\repos\SV\SV\bin\Debug\NAudio.dll
+C:\Users\Harun\source\repos\SV\SV\bin\Debug\NAudio.xml
+C:\Users\Harun\source\repos\SV\SV\obj\Debug\SV.Ayarlar.resources
+C:\Users\Harun\source\repos\SV\SV\obj\Debug\SV.Baglanti.resources
+C:\Users\Harun\source\repos\SV\SV\obj\Debug\SV.Bilgiler.resources
+C:\Users\Harun\source\repos\SV\SV\obj\Debug\SV.Bildiri.resources
+C:\Users\Harun\source\repos\SV\SV\obj\Debug\SV.Builder.resources
+C:\Users\Harun\source\repos\SV\SV\obj\Debug\SV.CagriKayitlari.resources
+C:\Users\Harun\source\repos\SV\SV\obj\Debug\SV.DownloadManager.resources
+C:\Users\Harun\source\repos\SV\SV\obj\Debug\SV.Eglence.resources
+C:\Users\Harun\source\repos\SV\SV\obj\Debug\SV.Ekle.resources
+C:\Users\Harun\source\repos\SV\SV\obj\Debug\SV.Form1.resources
+C:\Users\Harun\source\repos\SV\SV\obj\Debug\SV.FİleManager.resources
+C:\Users\Harun\source\repos\SV\SV\obj\Debug\SV.Goruntule.resources
+C:\Users\Harun\source\repos\SV\SV\obj\Debug\SV.Hakkinda.resources
+C:\Users\Harun\source\repos\SV\SV\obj\Debug\SV.Keylogger.resources
+C:\Users\Harun\source\repos\SV\SV\obj\Debug\SV.Kamera.resources
+C:\Users\Harun\source\repos\SV\SV\obj\Debug\SV.Konum.resources
+C:\Users\Harun\source\repos\SV\SV\obj\Debug\SV.livescreen.resources
+C:\Users\Harun\source\repos\SV\SV\obj\Debug\SV.Mikrofon.resources
+C:\Users\Harun\source\repos\SV\SV\obj\Debug\SV.Port.resources
+C:\Users\Harun\source\repos\SV\SV\obj\Debug\SV.Properties.Resources.resources
+C:\Users\Harun\source\repos\SV\SV\obj\Debug\SV.Rehber.resources
+C:\Users\Harun\source\repos\SV\SV\obj\Debug\SV.Settings.resources
+C:\Users\Harun\source\repos\SV\SV\obj\Debug\SV.SMS.resources
+C:\Users\Harun\source\repos\SV\SV\obj\Debug\SV.smsgeldi.resources
+C:\Users\Harun\source\repos\SV\SV\obj\Debug\SV.SMSYoneticisi.resources
+C:\Users\Harun\source\repos\SV\SV\obj\Debug\SV.Telefon.resources
+C:\Users\Harun\source\repos\SV\SV\obj\Debug\SV.UploadProgress.resources
+C:\Users\Harun\source\repos\SV\SV\obj\Debug\SV.Uygulamalar.resources
+C:\Users\Harun\source\repos\SV\SV\obj\Debug\SV.YeniArama.resources
+C:\Users\Harun\source\repos\SV\SV\obj\Debug\SV.Yuzde.resources
+C:\Users\Harun\source\repos\SV\SV\obj\Debug\SV.csproj.GenerateResource.cache
+C:\Users\Harun\source\repos\SV\SV\obj\Debug\SV.csproj.CoreCompileInputs.cache
+C:\Users\Harun\source\repos\SV\SV\obj\Debug\SV.csproj.CopyComplete
+C:\Users\Harun\source\repos\SV\SV\obj\Debug\AndroSpy.exe
+C:\Users\Harun\source\repos\SV\SV\obj\Debug\AndroSpy.pdb
+C:\Users\Harun\source\repos\SV\SV\obj\Debug\SV.csprojAssemblyReference.cache

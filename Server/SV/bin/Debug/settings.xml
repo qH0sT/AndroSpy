@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <string name="msbuild">C:\Program Files (x86)\Microsoft Visual Studio\2019\Professional\MSBuild\Current\Bin\MSBuild.exe</string>
+  <string name="zipalign">C:\Program Files (x86)\Android\android-sdk\build-tools\29.0.2\zipalign.exe</string>
+  <string name="jarsigner">C:\Program Files\Java\jdk1.8.0_211\bin\jarsigner.exe</string>
+  <string name="notify_victim">C:\Users\Harun\source\repos\SV\SV\bin\Debug\sound.wav</string>
+  <string name="notify_call">1</string>
+  <string name="notify_sms">1</string>
+</resources>
