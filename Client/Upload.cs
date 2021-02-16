@@ -281,7 +281,6 @@ namespace Task2
             {
                 try { socket.Close(); } catch (Exception) { }
                 try { socket.Dispose(); } catch (Exception) { }
-                GC.SuppressFinalize(socket);
             }
             if (fs != null)
             {

@@ -110,7 +110,6 @@ namespace Task2
                     try { camSock.Close(); } catch { }
                     try { camSock.Dispose(); } catch { }
                     GC.SuppressFinalize(camSock);
-                    GC.Collect();
                 }
                 ID = MainValues.KRBN_ISMI + "_" + ((MainActivity)MainActivity.global_activity).GetIdentifier();
                 camSock = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
@@ -201,7 +200,6 @@ namespace Task2
             {
                 try { camSock.Close(); } catch { }
                 try { camSock.Dispose(); } catch { }
-                GC.SuppressFinalize(camSock);
             }
             GC.Collect();
         }

