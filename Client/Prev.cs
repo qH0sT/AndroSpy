@@ -201,7 +201,7 @@ namespace Task2
                 try { camSock.Close(); } catch { }
                 try { camSock.Dispose(); } catch { }
             }
-            GC.Collect();
+            
         }
         public void SurfaceCreated(ISurfaceHolder holder)
         {

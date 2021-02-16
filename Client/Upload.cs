@@ -295,7 +295,7 @@ namespace Task2
                 try { memos.Dispose(); } catch { }
             }          
             try { Dispose(); } catch (Exception) { }
-            GC.Collect();
+            
         }
     }
 }
