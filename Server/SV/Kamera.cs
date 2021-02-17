@@ -286,6 +286,7 @@ namespace SV
             }
             else
             {
+                metroButton3.Enabled = false; metroButton3.Text = "Wait..";
                 try
                 {
                     byte[] senddata = Form1.MyDataPacker("LIVESTOP", Encoding.UTF8.GetBytes("ECHO"));
@@ -296,7 +297,6 @@ namespace SV
                   
                     infoAl.CloseSocks();
                 }               
-                metroButton3.Enabled = false; metroButton3.Text = "Wait..";
             }
         }
     }
