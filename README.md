@@ -3,7 +3,7 @@
 
 An Android RAT that written in completely C# by me (qH0sT a.k.a Sagopa K)  
 
-Yes, It is supporting dns connection like no-ip or duckdns or dynu......  
+Yes, It is supporting dns connection like no-ip or duckdns or dynu etc. and it has been tested with ngrok and portmap.io; it is working with both but you can't hear live mic because of UDP port.  
 
 Your Visual Studio must have Xamarin Developing Kit, otherwise you can't build client.  
 
