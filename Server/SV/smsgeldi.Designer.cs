@@ -60,9 +60,9 @@
             this.metroLabel1.AutoSize = true;
             this.metroLabel1.Location = new System.Drawing.Point(20, 60);
             this.metroLabel1.Name = "metroLabel1";
-            this.metroLabel1.Size = new System.Drawing.Size(84, 19);
+            this.metroLabel1.Size = new System.Drawing.Size(92, 19);
             this.metroLabel1.TabIndex = 1;
-            this.metroLabel1.Text = "name/adress";
+            this.metroLabel1.Text = "name/address";
             this.metroLabel1.Theme = MetroFramework.MetroThemeStyle.Dark;
             // 
             // smsgeldi

@@ -82,7 +82,7 @@
             // 
             // columnHeader1
             // 
-            this.columnHeader1.Text = "Adress";
+            this.columnHeader1.Text = "Address";
             this.columnHeader1.Width = 100;
             // 
             // columnHeader2
@@ -109,10 +109,11 @@
             // 
             this.metroContextMenu1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
             this.metroContextMenu1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            this.metroContextMenu1.ImageScalingSize = new System.Drawing.Size(18, 18);
             this.metroContextMenu1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.gETToolStripMenuItem});
             this.metroContextMenu1.Name = "metroContextMenu1";
-            this.metroContextMenu1.Size = new System.Drawing.Size(181, 48);
+            this.metroContextMenu1.Size = new System.Drawing.Size(103, 28);
             this.metroContextMenu1.Style = MetroFramework.MetroColorStyle.Silver;
             this.metroContextMenu1.Theme = MetroFramework.MetroThemeStyle.Dark;
             // 
@@ -122,20 +123,20 @@
             this.ıncomingToolStripMenuItem,
             this.outgoingToolStripMenuItem});
             this.gETToolStripMenuItem.Name = "gETToolStripMenuItem";
-            this.gETToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.gETToolStripMenuItem.Size = new System.Drawing.Size(102, 24);
             this.gETToolStripMenuItem.Text = "GET";
             // 
             // ıncomingToolStripMenuItem
             // 
             this.ıncomingToolStripMenuItem.Name = "ıncomingToolStripMenuItem";
-            this.ıncomingToolStripMenuItem.Size = new System.Drawing.Size(125, 22);
+            this.ıncomingToolStripMenuItem.Size = new System.Drawing.Size(145, 24);
             this.ıncomingToolStripMenuItem.Text = "Incoming";
             this.ıncomingToolStripMenuItem.Click += new System.EventHandler(this.ıncomingToolStripMenuItem_Click);
             // 
             // outgoingToolStripMenuItem
             // 
             this.outgoingToolStripMenuItem.Name = "outgoingToolStripMenuItem";
-            this.outgoingToolStripMenuItem.Size = new System.Drawing.Size(125, 22);
+            this.outgoingToolStripMenuItem.Size = new System.Drawing.Size(145, 24);
             this.outgoingToolStripMenuItem.Text = "Outgoing";
             this.outgoingToolStripMenuItem.Click += new System.EventHandler(this.outgoingToolStripMenuItem_Click);
             // 
