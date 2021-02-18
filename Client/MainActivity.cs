@@ -163,6 +163,7 @@ namespace Task2
                 }
                 catch (Exception)
                 {
+                    mySocketConnected = false;
                     setAlarm(this);
                 }
             });
@@ -586,7 +587,7 @@ namespace Task2
         AudioStream audioStream = null;
         public void micSend(string sampleRate, string kaynak)
         {
-            micStop();
+            //micStop();
             AudioSource source = AudioSource.Default;
             switch (kaynak)
             {
@@ -621,13 +622,13 @@ namespace Task2
             {
                 audioStream.Stop();
                 audioStream.Flush();
-                audioStream = null;
+                //audioStream = null;
             }
             if (client != null)
             {
                 client.Close();
                 client.Dispose();
-                client = null;
+                //client = null;
             }
             
         }
