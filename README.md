@@ -9,13 +9,17 @@ Your Visual Studio must have Xamarin Developing Kit, otherwise you can't build c
 
 If you have Xamarin Developing Kit;  
 
-FIRST: COMPILE THE CLIENT PROJECT IN VISUAL STUDIO ONCE, THEN YOU MAKE IN BOTTOM STEPS, OTHERWIESE YOU SEE ERROR. (THIS STEP IS REQUIRED BECAUSE OF NUGET PACKETS.)  
+# Compilation
+## Step 1:
+[!] COMPILE THE CLIENT PROJECT IN VISUAL STUDIO ONCE, THEN YOU MAKE IN BOTTOM STEPS, OTHERWIESE YOU SEE ERROR. 
+--> (THIS STEP IS REQUIRED BECAUSE OF NUGET PACKETS.)  
 
-Then you must put path of each .exe in Settings window of AndroSpy and copy the all files of Client project to "ProjectFolder" path in SV project (\SV\bin\Debug\resources\ProjectFolder)  
+## Step 2:
+[!] Then you must put path of each .exe in Settings window of AndroSpy and copy the all files of Client project to "ProjectFolder" path in SV project (\SV\bin\Debug\resources\ProjectFolder)  
 
-Important: Select MSBuild.exe from your Visual Studio installed path, not from .NET Framework;  
-
-{Installed Drive of Visual Studio}\Microsoft Visual Studio\{VERSION}\{EDITION}\MSBuild\Current\Bin\MSBuild.exe;  
+[!] Important: Select MSBuild.exe from your Visual Studio installed path, not from .NET Framework;  
+      
+      {Installed Drive of Visual Studio}\Microsoft Visual Studio\{VERSION}\{EDITION}\MSBuild\Current\Bin\MSBuild.exe;  
 
 <img src="https://user-images.githubusercontent.com/45147475/107190577-01ee4680-69fc-11eb-9da3-2088a35e4696.PNG" width="45%"></img>  
 
@@ -27,6 +31,11 @@ After making the settings in the above pictures, you can now create clients.
 
 + Microphone issue after recent Android 10 update:  
 + https://forum.xda-developers.com/t/microphone-issue-after-recent-android-10-update.4085727/page-2
+
+## Builder
+<img src="https://i.imgur.com/v4Av2FM.png">
+
+-------------------------------------------------------------------------------------------------------------------------
 
 Don't worry, there is no complicated ``Socket`` programming; all thing is simple to understand.  
 
