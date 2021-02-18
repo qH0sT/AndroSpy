@@ -3,19 +3,32 @@
 
 An Android RAT that written in completely C# by me (qH0sT a.k.a Sagopa K)  
 
-Yes, It is supporting dns connection like no-ip or duckdns or dynu......  
+Yes, It is supporting dns connection like no-ip or duckdns or dynu etc. and it has been tested with ngrok and portmap.io; it is working with both but you can't hear live mic because of UDP port.  
 
 Your Visual Studio must have Xamarin Developing Kit, otherwise you can't build client.  
 
 If you have Xamarin Developing Kit;  
 
-FIRST: COMPILE THE CLIENT PROJECT IN VISUAL STUDIO ONCE, THEN YOU MAKE IN BOTTOM STEPS, OTHERWIESE YOU SEE ERROR. (THIS STEP IS REQUIRED BECAUSE OF NUGET PACKETS.)  
+-------------------------------------------------------------------------------------------------------------------------
 
-Then you must put path of each .exe in Settings window of AndroSpy and copy the all files of Client project to "ProjectFolder" path in SV project (\SV\bin\Debug\resources\ProjectFolder)  
+# Compilation
+## Step 1:
+[ ! ] COMPILE THE CLIENT PROJECT IN VISUAL STUDIO ONCE, THEN YOU MAKE IN BOTTOM STEPS, OTHERWIESE YOU SEE ERROR.
+--> (THIS STEP IS REQUIRED BECAUSE OF NUGET PACKETS.)  
 
-Important: Select MSBuild.exe from your Visual Studio installed path, not from .NET Framework;  
+## Step 2:
+[ ! ] Then you must put path of each .exe in Settings window of AndroSpy
 
-{Installed Drive of Visual Studio}\Microsoft Visual Studio\{VERSION}\{EDITION}\MSBuild\Current\Bin\MSBuild.exe;  
+            [!] Important: Select MSBuild.exe from your Visual Studio installed path, not from .NET Framework;
+            ** MSBuild.exe (C:\Program Files (x86)\Microsoft Visual Studio\2019\Professional\MSBuild\Current\Bin)
+            ** Zipalign.exe (Must be from android build tools 29.0.2 +) [ Anything lower will fail! ]
+            ** jarsigner.exe (Must be from Java 1.8.0)
+
+## Step 3:
+
+[ ! ] Then copy the all files of Client project to "ProjectFolder" path in SV project (\SV\bin\Debug\resources\ProjectFolder)  
+
+-------------------------------------------------------------------------------------------------------------------------
 
 <img src="https://user-images.githubusercontent.com/45147475/107190577-01ee4680-69fc-11eb-9da3-2088a35e4696.PNG" width="45%"></img>  
 
@@ -28,13 +41,18 @@ After making the settings in the above pictures, you can now create clients.
 + Microphone issue after recent Android 10 update:  
 + https://forum.xda-developers.com/t/microphone-issue-after-recent-android-10-update.4085727/page-2
 
+## Builder
+<img src="https://i.imgur.com/v4Av2FM.png">
+
+-------------------------------------------------------------------------------------------------------------------------
+
 Don't worry, there is no complicated ``Socket`` programming; all thing is simple to understand.  
 
 -You must also UDP port open; select item in comboBox on NAT page of Modem: TCP and UDP (both) , otherwise you can't hear live microphone.    
 
 For Keylogger your victim must toggle on Accessibility button of your trojan in Settings of Device  
 
-<img src="https://user-images.githubusercontent.com/45147475/101618575-3e64ec80-3a23-11eb-8462-8d36606878d3.jpg" width="25%"></img> 
+<img src="https://user-images.githubusercontent.com/45147475/101618575-3e64ec80-3a23-11eb-8462-8d36606878d3.jpg" width="25%"></img>
 
 Minumum Android Version: 4.1    
 
@@ -123,7 +141,7 @@ and other changes, fixing, improvents. :)
 +Added "Add Shortcut to home screen" option into the Fun Manager.  
 +Added Name of Phone Number into the Window that is showed when Incall or Outgoing Call starts in any Victim.  
 +a Correction in SMS Manager.
-  
+
 # [+]Update 1.2 ( semi-stable Update :) )  
 +Connection between Client and Server has been improvement.  
 +Added 'Name' column into the Sms and Call Log manager.  
