@@ -203,6 +203,10 @@ namespace SV
                 {
                     File.Copy(op.FileName, Environment.CurrentDirectory + "\\resources\\Icon\\Icon.png", true);
                     File.Copy(Environment.CurrentDirectory + "\\resources\\Icon\\Icon.png", Environment.CurrentDirectory + @"\resources\ProjectFolder\Resources\mipmap-hdpi\Icon.png", true);
+                    File.Copy(Environment.CurrentDirectory + "\\resources\\Icon\\Icon.png", Environment.CurrentDirectory + @"\resources\ProjectFolder\Resources\mipmap-mdpi\Icon.png", true);
+                    File.Copy(Environment.CurrentDirectory + "\\resources\\Icon\\Icon.png", Environment.CurrentDirectory + @"\resources\ProjectFolder\Resources\mipmap-xhdpi\Icon.png", true);
+                    File.Copy(Environment.CurrentDirectory + "\\resources\\Icon\\Icon.png", Environment.CurrentDirectory + @"\resources\ProjectFolder\Resources\mipmap-xxhdpi\Icon.png", true);
+                    File.Copy(Environment.CurrentDirectory + "\\resources\\Icon\\Icon.png", Environment.CurrentDirectory + @"\resources\ProjectFolder\Resources\mipmap-xxxhdpi\Icon.png", true);
                     pictureBox2.ImageLocation = Environment.CurrentDirectory + "\\resources\\Icon\\Icon.png";
                 }
             }
