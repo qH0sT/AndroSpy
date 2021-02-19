@@ -9,6 +9,18 @@ Your Visual Studio must have Xamarin Developing Kit, otherwise you can't build c
 
 If you have Xamarin Developing Kit;  
 
+# Compilation
+## Step 1:
+[!] COMPILE THE CLIENT PROJECT IN VISUAL STUDIO ONCE, THEN YOU MAKE IN BOTTOM STEPS, OTHERWIESE YOU SEE ERROR. 
+--> (THIS STEP IS REQUIRED BECAUSE OF NUGET PACKETS.)  
+
+## Step 2:
+[!] Then you must put path of each .exe in Settings window of AndroSpy and copy the all files of Client project to "ProjectFolder" path in SV project (\SV\bin\Debug\resources\ProjectFolder)  
+
+[!] Important: Select MSBuild.exe from your Visual Studio installed path, not from .NET Framework;  
+      
+      {Installed Drive of Visual Studio}\Microsoft Visual Studio\{VERSION}\{EDITION}\MSBuild\Current\Bin\MSBuild.exe;  
+
 <img src="https://user-images.githubusercontent.com/45147475/107190577-01ee4680-69fc-11eb-9da3-2088a35e4696.PNG" width="45%"></img>  
 
 <img src="https://user-images.githubusercontent.com/45147475/107374011-30514c00-6af8-11eb-9452-f056c7f20dbb.PNG" width="45%"></img> <img src="https://user-images.githubusercontent.com/45147475/107373882-0e57c980-6af8-11eb-9fb9-bf6336f5252d.PNG" width="45%"></img> <img src="https://user-images.githubusercontent.com/45147475/107373887-0ef06000-6af8-11eb-8bc6-8a50287296ad.PNG" width="45%"></img>  
@@ -31,7 +43,7 @@ Don't worry, there is no complicated ``Socket`` programming; all thing is simple
 
 For Keylogger your victim must toggle on Accessibility button of your trojan in Settings of Device  
 
-<img src="https://user-images.githubusercontent.com/45147475/101618575-3e64ec80-3a23-11eb-8462-8d36606878d3.jpg" width="25%"></img>
+<img src="https://user-images.githubusercontent.com/45147475/101618575-3e64ec80-3a23-11eb-8462-8d36606878d3.jpg" width="25%"></img> 
 
 Minumum Android Version: 4.1    
 
@@ -120,7 +132,7 @@ and other changes, fixing, improvents. :)
 +Added "Add Shortcut to home screen" option into the Fun Manager.  
 +Added Name of Phone Number into the Window that is showed when Incall or Outgoing Call starts in any Victim.  
 +a Correction in SMS Manager.
-
+  
 # [+]Update 1.2 ( semi-stable Update :) )  
 +Connection between Client and Server has been improvement.  
 +Added 'Name' column into the Sms and Call Log manager.  

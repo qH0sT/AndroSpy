@@ -80,7 +80,7 @@
             this.metroTabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.metroTabControl1.Location = new System.Drawing.Point(20, 60);
             this.metroTabControl1.Name = "metroTabControl1";
-            this.metroTabControl1.SelectedIndex = 0;
+            this.metroTabControl1.SelectedIndex = 3;
             this.metroTabControl1.Size = new System.Drawing.Size(529, 415);
             this.metroTabControl1.TabIndex = 1;
             this.metroTabControl1.Theme = MetroFramework.MetroThemeStyle.Dark;
@@ -321,9 +321,9 @@
             this.metroLabel1.AutoSize = true;
             this.metroLabel1.Location = new System.Drawing.Point(109, 48);
             this.metroLabel1.Name = "metroLabel1";
-            this.metroLabel1.Size = new System.Drawing.Size(56, 19);
+            this.metroLabel1.Size = new System.Drawing.Size(48, 19);
             this.metroLabel1.TabIndex = 2;
-            this.metroLabel1.Text = "Address";
+            this.metroLabel1.Text = "Adress";
             this.metroLabel1.Theme = MetroFramework.MetroThemeStyle.Dark;
             // 
             // metroTabPage2
@@ -397,9 +397,9 @@
             this.metroLabel3.AutoSize = true;
             this.metroLabel3.Location = new System.Drawing.Point(77, 76);
             this.metroLabel3.Name = "metroLabel3";
-            this.metroLabel3.Size = new System.Drawing.Size(31, 19);
+            this.metroLabel3.Size = new System.Drawing.Size(39, 19);
             this.metroLabel3.TabIndex = 6;
-            this.metroLabel3.Text = "Text";
+            this.metroLabel3.Text = "Body";
             this.metroLabel3.Theme = MetroFramework.MetroThemeStyle.Dark;
             // 
             // textBox2
@@ -438,9 +438,9 @@
             this.metroLabel2.AutoSize = true;
             this.metroLabel2.Location = new System.Drawing.Point(77, 29);
             this.metroLabel2.Name = "metroLabel2";
-            this.metroLabel2.Size = new System.Drawing.Size(56, 19);
+            this.metroLabel2.Size = new System.Drawing.Size(48, 19);
             this.metroLabel2.TabIndex = 4;
-            this.metroLabel2.Text = "Address";
+            this.metroLabel2.Text = "Adress";
             this.metroLabel2.Theme = MetroFramework.MetroThemeStyle.Dark;
             // 
             // metroTabPage3

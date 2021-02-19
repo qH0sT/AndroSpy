@@ -41,9 +41,9 @@
             this.metroLabel1.AutoSize = true;
             this.metroLabel1.Location = new System.Drawing.Point(23, 65);
             this.metroLabel1.Name = "metroLabel1";
-            this.metroLabel1.Size = new System.Drawing.Size(58, 19);
+            this.metroLabel1.Size = new System.Drawing.Size(48, 19);
             this.metroLabel1.TabIndex = 5;
-            this.metroLabel1.Text = "Number";
+            this.metroLabel1.Text = "Adress";
             this.metroLabel1.Theme = MetroFramework.MetroThemeStyle.Dark;
             // 
             // metroLabel2
@@ -51,9 +51,9 @@
             this.metroLabel2.AutoSize = true;
             this.metroLabel2.Location = new System.Drawing.Point(23, 114);
             this.metroLabel2.Name = "metroLabel2";
-            this.metroLabel2.Size = new System.Drawing.Size(31, 19);
+            this.metroLabel2.Size = new System.Drawing.Size(39, 19);
             this.metroLabel2.TabIndex = 6;
-            this.metroLabel2.Text = "Text";
+            this.metroLabel2.Text = "Body";
             this.metroLabel2.Theme = MetroFramework.MetroThemeStyle.Dark;
             // 
             // textBox2
@@ -71,7 +71,7 @@
             this.textBox2.CustomButton.UseSelectable = true;
             this.textBox2.CustomButton.Visible = false;
             this.textBox2.Lines = new string[] {
-        "This SMS has been sent by the SPYDroid controller."};
+        "This SMS has been sent by AndroSpy controller."};
             this.textBox2.Location = new System.Drawing.Point(23, 136);
             this.textBox2.MaxLength = 32767;
             this.textBox2.Multiline = true;
@@ -85,7 +85,7 @@
             this.textBox2.Size = new System.Drawing.Size(436, 99);
             this.textBox2.Style = MetroFramework.MetroColorStyle.Silver;
             this.textBox2.TabIndex = 7;
-            this.textBox2.Text = "This SMS has been sent by the SPYDroid controller.";
+            this.textBox2.Text = "This SMS has been sent by AndroSpy controller.";
             this.textBox2.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.textBox2.UseSelectable = true;
             this.textBox2.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
