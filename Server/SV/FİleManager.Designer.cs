@@ -258,6 +258,7 @@
             // 
             this.metroContextMenu1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.metroContextMenu1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.metroContextMenu1.ImageScalingSize = new System.Drawing.Size(18, 18);
             this.metroContextMenu1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.denemeToolStripMenuItem,
             this.uploadToolStripMenuItem,
@@ -266,41 +267,41 @@
             this.deleteToolStripMenuItem,
             this.playSoundHiddenToolStripMenuItem});
             this.metroContextMenu1.Name = "metroContextMenu1";
-            this.metroContextMenu1.Size = new System.Drawing.Size(176, 136);
+            this.metroContextMenu1.Size = new System.Drawing.Size(195, 148);
             this.metroContextMenu1.Style = MetroFramework.MetroColorStyle.Silver;
             // 
             // denemeToolStripMenuItem
             // 
             this.denemeToolStripMenuItem.Name = "denemeToolStripMenuItem";
-            this.denemeToolStripMenuItem.Size = new System.Drawing.Size(175, 22);
+            this.denemeToolStripMenuItem.Size = new System.Drawing.Size(194, 24);
             this.denemeToolStripMenuItem.Text = "Download";
             this.denemeToolStripMenuItem.Click += new System.EventHandler(this.denemeToolStripMenuItem_Click);
             // 
             // uploadToolStripMenuItem
             // 
             this.uploadToolStripMenuItem.Name = "uploadToolStripMenuItem";
-            this.uploadToolStripMenuItem.Size = new System.Drawing.Size(175, 22);
+            this.uploadToolStripMenuItem.Size = new System.Drawing.Size(194, 24);
             this.uploadToolStripMenuItem.Text = "Upload";
             this.uploadToolStripMenuItem.Click += new System.EventHandler(this.uploadToolStripMenuItem_Click);
             // 
             // openToolStripMenuItem
             // 
             this.openToolStripMenuItem.Name = "openToolStripMenuItem";
-            this.openToolStripMenuItem.Size = new System.Drawing.Size(175, 22);
+            this.openToolStripMenuItem.Size = new System.Drawing.Size(194, 24);
             this.openToolStripMenuItem.Text = "Open";
             this.openToolStripMenuItem.Click += new System.EventHandler(this.openToolStripMenuItem_Click);
             // 
             // refreshToolStripMenuItem
             // 
             this.refreshToolStripMenuItem.Name = "refreshToolStripMenuItem";
-            this.refreshToolStripMenuItem.Size = new System.Drawing.Size(175, 22);
+            this.refreshToolStripMenuItem.Size = new System.Drawing.Size(194, 24);
             this.refreshToolStripMenuItem.Text = "Refresh";
             this.refreshToolStripMenuItem.Click += new System.EventHandler(this.refreshToolStripMenuItem_Click);
             // 
             // deleteToolStripMenuItem
             // 
             this.deleteToolStripMenuItem.Name = "deleteToolStripMenuItem";
-            this.deleteToolStripMenuItem.Size = new System.Drawing.Size(175, 22);
+            this.deleteToolStripMenuItem.Size = new System.Drawing.Size(194, 24);
             this.deleteToolStripMenuItem.Text = "Delete";
             this.deleteToolStripMenuItem.Click += new System.EventHandler(this.deleteToolStripMenuItem_Click);
             // 
@@ -310,20 +311,20 @@
             this.startToolStripMenuItem1,
             this.stopToolStripMenuItem1});
             this.playSoundHiddenToolStripMenuItem.Name = "playSoundHiddenToolStripMenuItem";
-            this.playSoundHiddenToolStripMenuItem.Size = new System.Drawing.Size(175, 22);
+            this.playSoundHiddenToolStripMenuItem.Size = new System.Drawing.Size(194, 24);
             this.playSoundHiddenToolStripMenuItem.Text = "Play Sound Hidden";
             // 
             // startToolStripMenuItem1
             // 
             this.startToolStripMenuItem1.Name = "startToolStripMenuItem1";
-            this.startToolStripMenuItem1.Size = new System.Drawing.Size(98, 22);
+            this.startToolStripMenuItem1.Size = new System.Drawing.Size(115, 24);
             this.startToolStripMenuItem1.Text = "Start";
             this.startToolStripMenuItem1.Click += new System.EventHandler(this.startToolStripMenuItem1_Click);
             // 
             // stopToolStripMenuItem1
             // 
             this.stopToolStripMenuItem1.Name = "stopToolStripMenuItem1";
-            this.stopToolStripMenuItem1.Size = new System.Drawing.Size(98, 22);
+            this.stopToolStripMenuItem1.Size = new System.Drawing.Size(115, 24);
             this.stopToolStripMenuItem1.Text = "Stop";
             this.stopToolStripMenuItem1.Click += new System.EventHandler(this.stopToolStripMenuItem1_Click);
             // 
@@ -334,9 +335,9 @@
             // 
             // metroTabControl1
             // 
-            this.metroTabControl1.Controls.Add(this.metroTabPage1);
             this.metroTabControl1.Controls.Add(this.tabPage4);
             this.metroTabControl1.Controls.Add(this.tabPage5);
+            this.metroTabControl1.Controls.Add(this.metroTabPage1);
             this.metroTabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.metroTabControl1.Location = new System.Drawing.Point(20, 60);
             this.metroTabControl1.Name = "metroTabControl1";
@@ -350,6 +351,7 @@
             // 
             this.metroTabPage1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
             this.metroTabPage1.Controls.Add(this.listView1);
+            this.metroTabPage1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.metroTabPage1.HorizontalScrollbarBarColor = true;
             this.metroTabPage1.HorizontalScrollbarHighlightOnWheel = false;
             this.metroTabPage1.HorizontalScrollbarSize = 10;
@@ -426,6 +428,7 @@
             // 
             this.metroContextMenu2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.metroContextMenu2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.metroContextMenu2.ImageScalingSize = new System.Drawing.Size(18, 18);
             this.metroContextMenu2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripMenuItem1,
             this.toolStripMenuItem2,
@@ -434,40 +437,40 @@
             this.toolStripMenuItem5,
             this.toolStripMenuItem6});
             this.metroContextMenu2.Name = "metroContextMenu1";
-            this.metroContextMenu2.Size = new System.Drawing.Size(178, 136);
+            this.metroContextMenu2.Size = new System.Drawing.Size(197, 148);
             this.metroContextMenu2.Style = MetroFramework.MetroColorStyle.Silver;
             // 
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(177, 22);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(196, 24);
             this.toolStripMenuItem1.Text = "Download";
             this.toolStripMenuItem1.Click += new System.EventHandler(this.toolStripMenuItem1_Click);
             // 
             // toolStripMenuItem2
             // 
             this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-            this.toolStripMenuItem2.Size = new System.Drawing.Size(177, 22);
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(196, 24);
             this.toolStripMenuItem2.Text = "Upload (Forbidden)";
             // 
             // toolStripMenuItem3
             // 
             this.toolStripMenuItem3.Name = "toolStripMenuItem3";
-            this.toolStripMenuItem3.Size = new System.Drawing.Size(177, 22);
+            this.toolStripMenuItem3.Size = new System.Drawing.Size(196, 24);
             this.toolStripMenuItem3.Text = "Open";
             this.toolStripMenuItem3.Click += new System.EventHandler(this.toolStripMenuItem3_Click);
             // 
             // toolStripMenuItem4
             // 
             this.toolStripMenuItem4.Name = "toolStripMenuItem4";
-            this.toolStripMenuItem4.Size = new System.Drawing.Size(177, 22);
+            this.toolStripMenuItem4.Size = new System.Drawing.Size(196, 24);
             this.toolStripMenuItem4.Text = "Refresh";
             this.toolStripMenuItem4.Click += new System.EventHandler(this.toolStripMenuItem4_Click);
             // 
             // toolStripMenuItem5
             // 
             this.toolStripMenuItem5.Name = "toolStripMenuItem5";
-            this.toolStripMenuItem5.Size = new System.Drawing.Size(177, 22);
+            this.toolStripMenuItem5.Size = new System.Drawing.Size(196, 24);
             this.toolStripMenuItem5.Text = "Delete";
             this.toolStripMenuItem5.Click += new System.EventHandler(this.toolStripMenuItem5_Click);
             // 
@@ -477,20 +480,20 @@
             this.toolStripMenuItem7,
             this.toolStripMenuItem8});
             this.toolStripMenuItem6.Name = "toolStripMenuItem6";
-            this.toolStripMenuItem6.Size = new System.Drawing.Size(177, 22);
+            this.toolStripMenuItem6.Size = new System.Drawing.Size(196, 24);
             this.toolStripMenuItem6.Text = "Play Sound Hidden";
             // 
             // toolStripMenuItem7
             // 
             this.toolStripMenuItem7.Name = "toolStripMenuItem7";
-            this.toolStripMenuItem7.Size = new System.Drawing.Size(98, 22);
+            this.toolStripMenuItem7.Size = new System.Drawing.Size(115, 24);
             this.toolStripMenuItem7.Text = "Start";
             this.toolStripMenuItem7.Click += new System.EventHandler(this.toolStripMenuItem7_Click);
             // 
             // toolStripMenuItem8
             // 
             this.toolStripMenuItem8.Name = "toolStripMenuItem8";
-            this.toolStripMenuItem8.Size = new System.Drawing.Size(98, 22);
+            this.toolStripMenuItem8.Size = new System.Drawing.Size(115, 24);
             this.toolStripMenuItem8.Text = "Stop";
             this.toolStripMenuItem8.Click += new System.EventHandler(this.toolStripMenuItem8_Click);
             // 
