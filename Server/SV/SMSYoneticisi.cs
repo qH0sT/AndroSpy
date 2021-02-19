@@ -56,7 +56,7 @@ namespace SV
                 try
                 {
                     listView1.SelectedItems[0].ImageIndex = 1;
-                    new Goruntule(listView1.SelectedItems[0].SubItems[1].Text + " <=> " + Text.Replace("SMS Manager - ", ""),
+                    new Goruntule(listView1.SelectedItems[0].SubItems[1].Text + " - " + Text.Replace("SMS Manager - ", ""),
                         listView1.SelectedItems[0].SubItems[2].Text).Show();
                 }
                 catch (Exception) { }

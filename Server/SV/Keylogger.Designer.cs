@@ -35,12 +35,12 @@
             this.metroTabPage1 = new MetroFramework.Controls.MetroTabPage();
             this.button2 = new MetroFramework.Controls.MetroTile();
             this.button1 = new MetroFramework.Controls.MetroTile();
-            this.textBox1 = new MetroFramework.Controls.MetroTextBox();
             this.metroTabPage2 = new MetroFramework.Controls.MetroTabPage();
             this.comboBox1 = new MetroFramework.Controls.MetroComboBox();
             this.button4 = new MetroFramework.Controls.MetroTile();
             this.button3 = new MetroFramework.Controls.MetroTile();
             this.textBox2 = new MetroFramework.Controls.MetroTextBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.metroStyleManager1)).BeginInit();
             this.metroTabControl1.SuspendLayout();
             this.metroTabPage1.SuspendLayout();
@@ -67,9 +67,9 @@
             // 
             // metroTabPage1
             // 
+            this.metroTabPage1.Controls.Add(this.textBox1);
             this.metroTabPage1.Controls.Add(this.button2);
             this.metroTabPage1.Controls.Add(this.button1);
-            this.metroTabPage1.Controls.Add(this.textBox1);
             this.metroTabPage1.HorizontalScrollbarBarColor = true;
             this.metroTabPage1.HorizontalScrollbarHighlightOnWheel = false;
             this.metroTabPage1.HorizontalScrollbarSize = 10;
@@ -106,40 +106,6 @@
             this.button1.Text = "Start";
             this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.button1.UseSelectable = true;
-            // 
-            // textBox1
-            // 
-            // 
-            // 
-            // 
-            this.textBox1.CustomButton.Image = null;
-            this.textBox1.CustomButton.Location = new System.Drawing.Point(255, 2);
-            this.textBox1.CustomButton.Name = "";
-            this.textBox1.CustomButton.Size = new System.Drawing.Size(227, 227);
-            this.textBox1.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.textBox1.CustomButton.TabIndex = 1;
-            this.textBox1.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.textBox1.CustomButton.UseSelectable = true;
-            this.textBox1.CustomButton.Visible = false;
-            this.textBox1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.textBox1.Lines = new string[0];
-            this.textBox1.Location = new System.Drawing.Point(0, 0);
-            this.textBox1.MaxLength = 32767;
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.PasswordChar = '\0';
-            this.textBox1.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.textBox1.SelectedText = "";
-            this.textBox1.SelectionLength = 0;
-            this.textBox1.SelectionStart = 0;
-            this.textBox1.ShortcutsEnabled = true;
-            this.textBox1.Size = new System.Drawing.Size(485, 232);
-            this.textBox1.TabIndex = 2;
-            this.textBox1.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.textBox1.UseSelectable = true;
-            this.textBox1.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.textBox1.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
-            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // metroTabPage2
             // 
@@ -229,6 +195,19 @@
             this.textBox2.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.textBox2.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
+            // textBox1
+            // 
+            this.textBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            this.textBox1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.textBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            this.textBox1.Location = new System.Drawing.Point(0, 0);
+            this.textBox1.Multiline = true;
+            this.textBox1.Name = "textBox1";
+            this.textBox1.ScrollBars = System.Windows.Forms.ScrollBars.Both;
+            this.textBox1.Size = new System.Drawing.Size(485, 232);
+            this.textBox1.TabIndex = 5;
+            // 
             // Keylogger
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -244,6 +223,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.metroStyleManager1)).EndInit();
             this.metroTabControl1.ResumeLayout(false);
             this.metroTabPage1.ResumeLayout(false);
+            this.metroTabPage1.PerformLayout();
             this.metroTabPage2.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -260,6 +240,6 @@
         private MetroFramework.Controls.MetroTile button3;
         public MetroFramework.Controls.MetroTextBox textBox2;
         public MetroFramework.Controls.MetroComboBox comboBox1;
-        public MetroFramework.Controls.MetroTextBox textBox1;
+        public System.Windows.Forms.TextBox textBox1;
     }
 }

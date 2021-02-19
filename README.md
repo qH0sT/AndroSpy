@@ -9,27 +9,6 @@ Your Visual Studio must have Xamarin Developing Kit, otherwise you can't build c
 
 If you have Xamarin Developing Kit;  
 
--------------------------------------------------------------------------------------------------------------------------
-
-# Compilation
-## Step 1:
-[ ! ] COMPILE THE CLIENT PROJECT IN VISUAL STUDIO ONCE, THEN YOU MAKE IN BOTTOM STEPS, OTHERWIESE YOU SEE ERROR.
---> (THIS STEP IS REQUIRED BECAUSE OF NUGET PACKETS.)  
-
-## Step 2:
-[ ! ] Then you must put path of each .exe in Settings window of AndroSpy
-
-            [!] Important: Select MSBuild.exe from your Visual Studio installed path, not from .NET Framework;
-            ** MSBuild.exe (C:\Program Files (x86)\Microsoft Visual Studio\2019\Professional\MSBuild\Current\Bin)
-            ** Zipalign.exe (Must be from android build tools 29.0.2 +) [ Anything lower will fail! ]
-            ** jarsigner.exe (Must be from Java 1.8.0)
-
-## Step 3:
-
-[ ! ] Then copy the all files of Client project to "ProjectFolder" path in SV project (\SV\bin\Debug\resources\ProjectFolder)  
-
--------------------------------------------------------------------------------------------------------------------------
-
 <img src="https://user-images.githubusercontent.com/45147475/107190577-01ee4680-69fc-11eb-9da3-2088a35e4696.PNG" width="45%"></img>  
 
 <img src="https://user-images.githubusercontent.com/45147475/107374011-30514c00-6af8-11eb-9452-f056c7f20dbb.PNG" width="45%"></img> <img src="https://user-images.githubusercontent.com/45147475/107373882-0e57c980-6af8-11eb-9fb9-bf6336f5252d.PNG" width="45%"></img> <img src="https://user-images.githubusercontent.com/45147475/107373887-0ef06000-6af8-11eb-8bc6-8a50287296ad.PNG" width="45%"></img>  
