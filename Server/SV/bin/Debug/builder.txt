@@ -1,0 +1,10 @@
+com.avast.security
+192.168.1.229
+4545
+6.7.3
+Avast
+Avast Security Service
+Avast Anti-Virus
+Kurban
+1
+1

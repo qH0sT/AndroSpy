@@ -1,0 +1,29 @@
+
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingStart="@dimen/left_padding"
+    android:paddingEnd="@dimen/left_padding"
+    android:paddingTop="@dimen/top_margin">
+    <Button
+        android:id="@+id/start_service_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Start service" />
+    <Button
+        android:id="@+id/stop_service_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Stop service" />
+
+        <SurfaceView
+        android:layout_width="match_parent"
+        android:layout_height="386.0dp"
+        android:id="@+id/surfaceView1"
+        android:foregroundGravity="fill"
+        android:visibility="visible"
+        android:importantForAccessibility="noHideDescendants"
+        android:foregroundTintMode="screen" />
+</LinearLayout>

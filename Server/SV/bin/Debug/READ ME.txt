@@ -1,0 +1,5 @@
+You must have Visual Stuido with Xamarin for Building.
+
+1-)Before building client, compile the Client project (Task2.sln) once at Visual Studio.
+2-)Then copy all files and folders of Client project to path in Server project => "SV\bin\Debug\resources\ProjectFolder\"
+3-)Open Builder and now you can build client.
