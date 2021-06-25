@@ -82,11 +82,12 @@ For Huawei and other EMUI devices, read this article: https://dontkillmyapp.com/
 
 + Re-connect issue fixed.  
 + Added Shell Terminal.  
++ Added toolTip ping status (0m 0s 30ms) (move mouse on to image of victim)
 + Live Camera was improvement.  
 + Socket comminication was improvement.  
-+ Added RAM and Internal Storage informations.  
++ Added RAM and Internal Storage informations. (with toolTip)  
 + Some visual improvements (Text Fonts, words etc.)  
-+ Added charging status image and wifi signal strength image.  
++ Added charging status image and wifi signal strength image. (with toolTip)  
 + and others...  
 
 # Update 20.05.2021  
