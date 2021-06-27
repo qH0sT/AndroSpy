@@ -199,7 +199,10 @@
             this.Controls.Add(this.groupBox1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(288, 243);
+            this.MinimumSize = new System.Drawing.Size(288, 243);
             this.Name = "Port";
+            this.Resizable = false;
             this.ShowInTaskbar = false;
             this.Text = "Welcome";
             this.Theme = MetroFramework.MetroThemeStyle.Dark;

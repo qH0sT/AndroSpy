@@ -258,6 +258,7 @@
             this.MaximumSize = new System.Drawing.Size(403, 235);
             this.MinimumSize = new System.Drawing.Size(403, 235);
             this.Name = "Baglanti";
+            this.Resizable = false;
             this.Text = "Connection Settings";
             this.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.TopMost = true;
