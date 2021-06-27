@@ -13,7 +13,7 @@ namespace SV
         public livescreen(Socket sck, string id)
         {
             InitializeComponent();
-            comboBox1.SelectedIndex = 4;
+            comboBox1.SelectedIndex = 2;
             sock = sck; ID = id;
             button1.Click += button1_Click;
             button2.Click += button2_Click;
