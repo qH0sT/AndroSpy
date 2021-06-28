@@ -94,7 +94,7 @@ namespace Task2
 
                 if (image != null)
                 {
-                    image.Close();
+                    image.Dispose();
                 }
             }
         }

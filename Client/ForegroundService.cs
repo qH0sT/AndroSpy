@@ -367,34 +367,31 @@ namespace Task2
             public ServerSession(Socket serverSock)
             {
                 _globalService.globalMemoryStream = memos;
-                ReadAsync(serverSock);
+                Read(serverSock);
             }
-            private async void ReadAsync(Socket server)
+            private void Read(Socket server)
             {
-                using (NetworkStream ns = new NetworkStream(server))
+                int readed = default;
+                while (true)
                 {
-                    int readed = default;
-                    while (true)
+                    try
                     {
-                        try
+                        readed = server.Receive(dataByte, 0, blockSize, SocketFlags.None);
+                        if (readed > 0)
                         {
-                            readed = await ns.ReadAsync(dataByte, 0, blockSize);
-                            if (readed > 0)
+                            if (memos != null)
                             {
-                                if (memos != null)
-                                {
-                                    memos.Write(dataByte, 0, readed);
-                                    UnPacker(memos);
-                                }
+                                memos.Write(dataByte, 0, readed);
+                                UnPacker(memos);
                             }
                         }
-                        catch (Exception)
-                        {
-                            Dispose();
-                            break;
-                        }
-                        await Task.Delay(1);
                     }
+                    catch (Exception)
+                    {
+                        Dispose();
+                        break;
+                    }
+                    Task.Delay(1).Wait();
                 }
             }
 
