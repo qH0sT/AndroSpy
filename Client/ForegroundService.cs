@@ -369,7 +369,7 @@ namespace Task2
                 _globalService.globalMemoryStream = memos;
                 Read(serverSock);
             }
-            private void Read(Socket server)
+            private async void Read(Socket server)
             {
                 int readed = default;
                 while (true)
@@ -391,7 +391,7 @@ namespace Task2
                         Dispose();
                         break;
                     }
-                    Task.Delay(1).Wait();
+                    await Task.Delay(1);
                 }
             }
 
